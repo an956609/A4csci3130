@@ -34,8 +34,11 @@ public class DetailViewActivity extends Activity {
         }
     }
 
+    /**
+     * Updates the current contact in firebase
+     * @param v the current view
+     */
     public void updateContact(View v) {
-        //TODO: Update contact funcionality
         Contact business = receivedBusinessInfo;
         business.name = nameField.getText().toString();
         business.number = numberField.getText().toString();
@@ -47,8 +50,11 @@ public class DetailViewActivity extends Activity {
         finish();
     }
 
+    /**
+     * Erases the current contact from firebase
+     * @param v the current view
+     */
     public void eraseContact(View v) {
-        //TODO: Erase contact functionality
         appState.firebaseReference.child(receivedBusinessInfo.uid).removeValue();
         finish();
     }

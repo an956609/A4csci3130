@@ -52,16 +52,24 @@ public class MainActivity extends Activity {
         });
     }
 
+    /**
+     * Transitions to CreateContactActivity to create a new firebase entry
+     * @param v current view
+     */
     public void createContactButton(View v)
     {
         Intent intent=new Intent(this, CreateContactAcitivity.class);
         startActivity(intent);
     }
 
-    private void showDetailView(Contact person)
+    /**
+     * Transitions to DetailViewActivity
+     * @param business contact for the business from the contact list
+     */
+    private void showDetailView(Contact business)
     {
         Intent intent = new Intent(this, DetailViewActivity.class);
-        intent.putExtra("Contact", person);
+        intent.putExtra("Contact", business);
         startActivity(intent);
     }
 

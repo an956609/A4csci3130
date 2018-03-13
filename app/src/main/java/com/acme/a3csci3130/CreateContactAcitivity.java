@@ -28,6 +28,11 @@ public class CreateContactAcitivity extends Activity {
         provinceField = (EditText) findViewById(R.id.province);
     }
 
+    /**
+     * Adds the values form the text fields in this activity to a firebase
+     * entry.
+     * @param v current view
+     */
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
         String businessID = appState.firebaseReference.push().getKey();
