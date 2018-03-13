@@ -3,7 +3,7 @@
     <string name="title_activity_list">ListActivity</string>
     <string name="name_hint">name (between 2 and 48 characters)</string>
     <string name="business_hint">Fisher, Distributor, Processor, Fish Monger</string>
-    <string name="phone_hint">phone number ex: (123)-456-7890</string>
+    <string name="phone_hint">phone number ex: 123-456-7890</string>
     <string name="address_hint">Optional: full address ( 50 characters or less)</string>
     <string name="province_hint">Optional: empty or 2 letter province code</string>
 
