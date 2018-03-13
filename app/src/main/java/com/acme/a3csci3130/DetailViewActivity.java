@@ -44,9 +44,12 @@ public class DetailViewActivity extends Activity {
         business.province = provinceField.getText().toString();
 
         appState.firebaseReference.child(business.uid).setValue(business);
+        finish();
     }
 
     public void eraseContact(View v) {
         //TODO: Erase contact functionality
+        appState.firebaseReference.child(receivedBusinessInfo.uid).removeValue();
+        finish();
     }
 }
