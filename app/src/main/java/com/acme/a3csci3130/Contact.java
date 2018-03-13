@@ -25,6 +25,15 @@ public class Contact implements Serializable {
         // Default constructor required for calls to DataSnapshot.getValue
     }
 
+    /**
+     * Constructor to initialize Contact with fields
+     * @param uid the uid of the entry in firebase database
+     * @param name name of the business
+     * @param number phone number of the business
+     * @param business role of the business
+     * @param address address of the main location
+     * @param province province of operation
+     */
     public Contact(String uid, String name, String number, String business,
                    String address, String province){
         this.uid = uid;
