@@ -3,14 +3,31 @@
     ".read": "true",
     ".write": "true",
     "contacts": {
-            "$contact": {
-                "name": {
-                    ".validate": "newData.isString() && newData.val().length < 50"
-                },
-                "email": {
-                    ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
-                }
-            }
-        }
+      "$contact": {
+        ".validate": "newData.hasChildren(['name','number','business'])",
+      	"name": {
+        	".validate": "newData.isString() &&
+        								newData.val().length > 1 &&
+            	          newData.val().length < 49"
+      	},
+      	"number": {
+        	".validate": "newData.isString() &&
+        								newData.val().matches(/[0-9]{3}[- ][0-9]{3}[- ][0-9]{4}/)"
+      	},
+      	"business": {
+        	".validate": "newData.isString() &&
+        								newData.val().matches(/Fisher|Distributor|Processor|Fish Monger/)"
+      	},
+      	"address": {
+        	".validate": "newData.isString() &&
+        								newData.val().length < 50"
+     	 },
+      	"province": {
+        	".validate": "newData.isString() &&
+        								(newData.val().matches(/AB|BC|MB|NB|NL|NS|NT|NU|ON|PE|QC|SK|YT/) ||
+            	          newData.val().length < 1)"
+      	}
+      }
+    }
   }
 }
